@@ -91,7 +91,7 @@ public class KyberPreKeyStoreImpl: LibSignalClient.KyberPreKeyStore {
 
     public init(
         for identity: OWSIdentity,
-        dateProvider: @escaping DateProvider,
+        dateProvider: @escaping DateProvider
     ) {
         self.identity = identity
         self.dateProvider = dateProvider

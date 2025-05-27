@@ -149,7 +149,7 @@ public class AppSetup {
         )
         let recipientFetcher = RecipientFetcherImpl(
             recipientDatabaseTable: recipientDatabaseTable,
-            searchableNameIndexer: searchableNameIndexer,
+            searchableNameIndexer: searchableNameIndexer
         )
         let recipientIdFinder = RecipientIdFinder(recipientDatabaseTable: recipientDatabaseTable, recipientFetcher: recipientFetcher)
 
@@ -194,7 +194,7 @@ public class AppSetup {
 
         let aciSignalProtocolStore = SignalProtocolStoreImpl(
             for: .aci,
-            recipientIdFinder: recipientIdFinder,
+            recipientIdFinder: recipientIdFinder
         )
         let blockedRecipientStore = BlockedRecipientStore()
         let blockingManager = BlockingManager(
@@ -219,7 +219,7 @@ public class AppSetup {
         let archivedPaymentStore = ArchivedPaymentStoreImpl()
         let pniSignalProtocolStore = SignalProtocolStoreImpl(
             for: .pni,
-            recipientIdFinder: recipientIdFinder,
+            recipientIdFinder: recipientIdFinder
         )
         let profileManager = testDependencies.profileManager ?? OWSProfileManager(
             appReadiness: appReadiness,
@@ -928,7 +928,7 @@ public class AppSetup {
         let usernameEducationManager = UsernameEducationManagerImpl()
         let usernameLinkManager = UsernameLinkManagerImpl(
             db: db,
-            apiClient: usernameApiClient,
+            apiClient: usernameApiClient
         )
         let localUsernameManager = LocalUsernameManagerImpl(
             db: db,

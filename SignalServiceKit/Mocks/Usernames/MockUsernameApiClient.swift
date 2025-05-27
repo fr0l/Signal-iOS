@@ -14,7 +14,7 @@ class MockUsernameApiClient: UsernameApiClient {
     var confirmReservedUsernameMocks = [(
         reservedUsername: Usernames.HashedUsername,
         encryptedUsernameForLink: Data,
-        chatServiceAuth: ChatServiceAuth,
+        chatServiceAuth: ChatServiceAuth
     ) async throws -> Usernames.ApiClientConfirmationResult]()
 
     func confirmReservedUsername(
@@ -36,7 +36,7 @@ class MockUsernameApiClient: UsernameApiClient {
 
     var setUsernameLinkMocks = [(
         encryptedUsername: Data,
-        keepLinkHandle: Bool,
+        keepLinkHandle: Bool
     ) async throws -> UUID]()
 
     func setUsernameLink(encryptedUsername: Data, keepLinkHandle: Bool) async throws -> UUID {

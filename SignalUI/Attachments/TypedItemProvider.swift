@@ -241,7 +241,7 @@ public struct TypedItemProvider {
     }
 
     private nonisolated func loadDataRepresentation(
-        overrideTypeIdentifier: String? = nil,
+        overrideTypeIdentifier: String? = nil
     ) async throws -> Data {
         try await withCheckedThrowingContinuation { continuation in
             _ = itemProvider.loadDataRepresentation(

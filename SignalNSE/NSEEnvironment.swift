@@ -152,7 +152,7 @@ class NSEEnvironment {
             callMessageHandler: NSECallMessageHandler(),
             currentCallProvider: CurrentCallNoOpProvider(),
             notificationPresenter: NotificationPresenterImpl(),
-            incrementalMessageTSAttachmentMigratorFactory: NoOpIncrementalMessageTSAttachmentMigratorFactory(),
+            incrementalMessageTSAttachmentMigratorFactory: NoOpIncrementalMessageTSAttachmentMigratorFactory()
         ).prepareDatabase()
         self.finalContinuation = finalContinuation
 

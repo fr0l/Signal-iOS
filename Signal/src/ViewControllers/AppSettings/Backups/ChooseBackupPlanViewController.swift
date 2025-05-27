@@ -33,7 +33,7 @@ class ChooseBackupPlanViewController: HostingController<ChooseBackupPlanView> {
 
     convenience init(
         initialPlanSelection: PlanSelection?,
-        paidPlanDisplayPrice: String,
+        paidPlanDisplayPrice: String
     ) {
         self.init(
             initialPlanSelection: initialPlanSelection,

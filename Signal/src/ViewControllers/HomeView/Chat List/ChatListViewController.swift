@@ -1344,7 +1344,7 @@ public class ChatListViewController: OWSViewController, HomeTabViewController {
                 ContactSupportActionSheet.present(
                     emailFilter: .custom("NotLaunchingNSE"),
                     logDumper: .fromGlobals(),
-                    fromViewController: self,
+                    fromViewController: self
                 )
             }
         ))

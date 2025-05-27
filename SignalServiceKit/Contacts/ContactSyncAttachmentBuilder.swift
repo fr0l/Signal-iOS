@@ -146,7 +146,7 @@ enum ContactSyncAttachmentBuilder {
             familyName: "",
             nickname: "",
             fullName: "",
-            contactAvatarHash: nil,
+            contactAvatarHash: nil
         )
     }
 }

@@ -332,11 +332,11 @@ public final class BackupSubscriptionManager {
 
         let (
             registrationState,
-            persistedIAPSubscriberData,
+            persistedIAPSubscriberData
         ) = db.read { tx in
             return (
                 tsAccountManager.registrationState(tx: tx),
-                store.getIAPSubscriberData(tx: tx),
+                store.getIAPSubscriberData(tx: tx)
             )
         }
 

@@ -20,7 +20,7 @@ public class SignalProtocolStoreImpl: SignalProtocolStore {
 
     public init(
         for identity: OWSIdentity,
-        recipientIdFinder: RecipientIdFinder,
+        recipientIdFinder: RecipientIdFinder
     ) {
         sessionStore = SSKSessionStore(
             for: identity,
@@ -30,7 +30,7 @@ public class SignalProtocolStoreImpl: SignalProtocolStore {
         signedPreKeyStore = SignedPreKeyStoreImpl(for: identity)
         kyberPreKeyStore = KyberPreKeyStoreImpl(
             for: identity,
-            dateProvider: Date.provider,
+            dateProvider: Date.provider
         )
     }
 }

@@ -719,7 +719,7 @@ class RegistrationPinViewController: OWSViewController {
             ContactSupportActionSheet.present(
                 emailFilter: .registrationPINMode(state.contactSupportMode),
                 logDumper: .fromGlobals(),
-                fromViewController: self,
+                fromViewController: self
             )
         })
 

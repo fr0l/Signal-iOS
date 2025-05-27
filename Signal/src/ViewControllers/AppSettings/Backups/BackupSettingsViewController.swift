@@ -364,7 +364,7 @@ private class BackupSettingsViewModel: ObservableObject {
         lastBackupDate: Date?,
         lastBackupSizeBytes: UInt64?,
         backupFrequency: BackupFrequency,
-        shouldBackUpOnCellular: Bool,
+        shouldBackUpOnCellular: Bool
     ) {
         self.backupPlanLoadingState = .loading
         self.areBackupsEnabled = areBackupsEnabled
@@ -888,7 +888,7 @@ private struct BackupEnabledView: View {
 private extension BackupSettingsViewModel {
     static func forPreview(
         areBackupsEnabled: Bool = true,
-        planLoadResult: Result<BackupPlanLoadingState.LoadedBackupPlan, Error>,
+        planLoadResult: Result<BackupPlanLoadingState.LoadedBackupPlan, Error>
     ) -> BackupSettingsViewModel {
         class PreviewActionsDelegate: ActionsDelegate {
             private let planLoadResult: Result<BackupPlanLoadingState.LoadedBackupPlan, Error>
@@ -966,7 +966,7 @@ private extension BackupSettingsViewModel {
 #Preview("Disabled") {
     BackupSettingsView(viewModel: .forPreview(
         areBackupsEnabled: false,
-        planLoadResult: .success(.free),
+        planLoadResult: .success(.free)
     ))
 }
 

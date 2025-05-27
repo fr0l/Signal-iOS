@@ -67,7 +67,7 @@ public class ShareViewController: UIViewController, ShareViewDelegate, SAEFailed
             callMessageHandler: NoopCallMessageHandler(),
             currentCallProvider: CurrentCallNoOpProvider(),
             notificationPresenter: NoopNotificationPresenterImpl(),
-            incrementalMessageTSAttachmentMigratorFactory: NoOpIncrementalMessageTSAttachmentMigratorFactory(),
+            incrementalMessageTSAttachmentMigratorFactory: NoOpIncrementalMessageTSAttachmentMigratorFactory()
         )
 
         // Configure the rest of the globals before preparing the database.

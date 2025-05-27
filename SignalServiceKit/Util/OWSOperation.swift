@@ -27,7 +27,7 @@ public enum OWSOperation {
     ///   balanced by retries that wait 30 hours.)
     public static func retryIntervalForExponentialBackoff(
         failureCount: some FixedWidthInteger,
-        maxAverageBackoff: TimeInterval = .infinity,
+        maxAverageBackoff: TimeInterval = .infinity
     ) -> TimeInterval {
         let averageBackoff = min(maxAverageBackoff, pow(2, Double(failureCount)))
         return averageBackoff * Double.random(in: 0.75..<1.25)

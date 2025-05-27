@@ -21,7 +21,7 @@ public struct DebugLogDumper {
         return Self(
             accountManager: DependenciesBridge.shared.tsAccountManager,
             appVersion: AppVersionImpl.shared,
-            db: DependenciesBridge.shared.db,
+            db: DependenciesBridge.shared.db
         )
     }
 

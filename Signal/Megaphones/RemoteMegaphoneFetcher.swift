@@ -220,7 +220,7 @@ private extension RemoteMegaphoneFetcher {
     /// fail with a 404, if no translation exists for the given locale string.
     private func fetchTranslation(
         forMegaphoneManifest manifest: RemoteMegaphoneModel.Manifest,
-        withLocaleString localeString: String,
+        withLocaleString localeString: String
     ) async throws -> RemoteMegaphoneModel.Translation {
         return try await Retry.performWithBackoff(
             maxAttempts: 3,
@@ -244,7 +244,7 @@ private extension RemoteMegaphoneFetcher {
     /// Get a path to the local image file for this translation. Fetches the
     /// image if necessary. Returns ``nil`` if this translation has no image.
     private func downloadImageIfNecessary(
-        forTranslation translation: RemoteMegaphoneModel.Translation,
+        forTranslation translation: RemoteMegaphoneModel.Translation
     ) async throws -> URL? {
         guard let imageRemoteUrlPath = translation.imageRemoteUrlPath else {
             return nil

@@ -17,7 +17,7 @@ public class RecipientFetcherImpl: RecipientFetcher {
 
     public init(
         recipientDatabaseTable: RecipientDatabaseTable,
-        searchableNameIndexer: any SearchableNameIndexer,
+        searchableNameIndexer: any SearchableNameIndexer
     ) {
         self.recipientDatabaseTable = recipientDatabaseTable
         self.searchableNameIndexer = searchableNameIndexer

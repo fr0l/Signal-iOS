@@ -143,7 +143,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: requestBuilder,
             groupId: nil,
             behavior400: isRetryingAfterRecoverable400 ? .fail : .reportForRecovery,
-            behavior403: .fail,
+            behavior403: .fail
         )
 
         let groupResponseProto = try GroupsProtoGroupResponse(serializedData: response.responseBodyData ?? Data())
@@ -331,7 +331,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: requestBuilder,
             groupId: groupId,
             behavior400: behavior400,
-            behavior403: .fetchGroupUpdates,
+            behavior403: .fetchGroupUpdates
         )
 
         return (builtGroupChange.groupUpdateMessageBehavior, response)
@@ -567,7 +567,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: requestBuilder,
             groupId: groupId,
             behavior400: .fail,
-            behavior403: .fetchGroupUpdates,
+            behavior403: .fetchGroupUpdates
         )
 
         guard let protoData = response.responseBodyData else {
@@ -605,7 +605,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: requestBuilder,
             groupId: groupId,
             behavior400: .fail,
-            behavior403: .removeFromGroup,
+            behavior403: .removeFromGroup
         )
 
         let groupResponseProto = try GroupsProtoGroupResponse(serializedData: response.responseBodyData ?? Data())
@@ -743,7 +743,7 @@ public class GroupsV2Impl: GroupsV2 {
             },
             groupId: groupId,
             behavior400: .fail,
-            behavior403: .ignore, // actually means "throw error"
+            behavior403: .ignore // actually means "throw error"
         )
         guard let groupChangesProtoData = response.responseBodyData else {
             throw OWSAssertionError("Invalid responseObject.")
@@ -826,7 +826,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: getJoinedAtRevisionRequestBuilder,
             groupId: groupId,
             behavior400: .fail,
-            behavior403: .ignore,
+            behavior403: .ignore
         )
 
         guard let memberData = response.responseBodyData else {
@@ -1043,7 +1043,7 @@ public class GroupsV2Impl: GroupsV2 {
         requestBuilder: RequestBuilder,
         groupId: Data?,
         behavior400: Behavior400,
-        behavior403: Behavior403,
+        behavior403: Behavior403
     ) async throws -> HTTPResponse {
         guard let localIdentifiers = DependenciesBridge.shared.tsAccountManager.localIdentifiersWithMaybeSneakyTransaction else {
             throw OWSAssertionError("Missing localIdentifiers.")
@@ -1062,7 +1062,7 @@ public class GroupsV2Impl: GroupsV2 {
                         error: error,
                         groupId: groupId,
                         behavior400: behavior400,
-                        behavior403: behavior403,
+                        behavior403: behavior403
                     )
                 }
             }
@@ -1075,7 +1075,7 @@ public class GroupsV2Impl: GroupsV2 {
         error: Error,
         groupId: Data?,
         behavior400: Behavior400,
-        behavior403: Behavior403,
+        behavior403: Behavior403
     ) async throws -> Never {
         // Fall through to retry if retry-able,
         // otherwise reject immediately.
@@ -1443,7 +1443,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: requestBuilder,
             groupId: nil,
             behavior400: .fail,
-            behavior403: behavior403,
+            behavior403: behavior403
         )
         guard let protoData = response.responseBodyData else {
             throw OWSAssertionError("Invalid responseObject.")
@@ -1674,7 +1674,7 @@ public class GroupsV2Impl: GroupsV2 {
                 requestBuilder: requestBuilder,
                 groupId: groupId.serialize().asData,
                 behavior400: .fail,
-                behavior403: .reportInvalidOrBlockedGroupLink,
+                behavior403: .reportInvalidOrBlockedGroupLink
             )
 
             let changeResponse = try GroupsProtoGroupChangeResponse(serializedData: response.responseBodyData ?? Data())
@@ -1986,7 +1986,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: requestBuilder,
             groupId: groupId,
             behavior400: .fail,
-            behavior403: .fail,
+            behavior403: .fail
         )
 
         return newRevision
@@ -2089,7 +2089,7 @@ public class GroupsV2Impl: GroupsV2 {
             requestBuilder: requestBuilder,
             groupId: try secretParams.getPublicParams().getGroupIdentifier().serialize().asData,
             behavior400: .fail,
-            behavior403: .fetchGroupUpdates,
+            behavior403: .fetchGroupUpdates
         )
 
         guard let groupProtoData = response.responseBodyData else {

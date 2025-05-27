@@ -16,7 +16,7 @@ public class UsernameApiClientImpl: UsernameApiClient {
 
     private func performRequest(
         request: TSRequest,
-        canUseWebSocket: Bool = true,
+        canUseWebSocket: Bool = true
     ) async throws -> any HTTPResponse {
         try await networkManager.asyncRequest(request, canUseWebSocket: canUseWebSocket)
     }

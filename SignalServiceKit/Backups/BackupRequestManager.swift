@@ -133,7 +133,7 @@ extension BackupRequestManager {
     func fetchBackupServiceAuth(
         for credentialType: BackupAuthCredentialType,
         localAci: Aci,
-        auth: ChatServiceAuth,
+        auth: ChatServiceAuth
     ) async throws -> BackupServiceAuth {
         return try await self.fetchBackupServiceAuth(
             for: credentialType,

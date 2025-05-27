@@ -308,7 +308,7 @@ public struct UsernameQuerier {
 
     private func handleError(
         _ error: any Error,
-        dismissalDelegate: (any SheetDismissalDelegate)?,
+        dismissalDelegate: (any SheetDismissalDelegate)?
     ) {
         if let notFoundError = error as? UsernameNotFoundError {
             showUsernameNotFoundError(username: notFoundError.usernameString, dismissalDelegate: dismissalDelegate)

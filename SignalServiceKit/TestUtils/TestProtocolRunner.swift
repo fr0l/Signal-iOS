@@ -222,7 +222,7 @@ public struct LocalSignalClient: TestSignalClient {
         self.identity = identity
         self.protocolStore = SignalProtocolStoreImpl(
             for: identity,
-            recipientIdFinder: DependenciesBridge.shared.recipientIdFinder,
+            recipientIdFinder: DependenciesBridge.shared.recipientIdFinder
         )
     }
 

@@ -50,7 +50,7 @@ public final class UsernameLinkManagerImpl: UsernameLinkManager {
 
     init(
         db: any DB,
-        apiClient: UsernameApiClient,
+        apiClient: UsernameApiClient
     ) {
         self.db = db
         self.apiClient = apiClient
